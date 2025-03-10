@@ -1,0 +1,15 @@
+.banned-user {
+    display: flex;
+}
+.blocked-user-email {
+    width: 300px;
+    font-size: 20px;
+}
+.unblock-icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.unblock-icon {
+    font-size: 20px;
+}

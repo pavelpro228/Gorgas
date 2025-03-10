@@ -1,0 +1,45 @@
+.header {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.header img {
+    width: 200px;
+}
+.header .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .links ul {
+    display: flex;
+    padding: 0;
+}
+.header .links a {
+    text-decoration: none;
+}
+.header .links ul li {
+    list-style: none;
+    margin: 10px;
+    color: black;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.header .links ul li:hover,
+.user-btn:hover {
+    cursor: pointer;
+    color: rgb(69, 69, 69);
+}
+.user-btn-container {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-btn {
+    font-size: 50px;
+    transition: 0.3s;
+}

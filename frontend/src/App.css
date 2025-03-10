@@ -1,0 +1,8 @@
+.main,
+.contacts,
+.question,
+.about,
+.authorization,
+.banned-users {
+    min-height: 629px;
+}

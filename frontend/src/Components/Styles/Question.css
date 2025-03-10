@@ -1,0 +1,46 @@
+.question {
+    display: flex;
+}
+.name,
+.surname,
+.enter-question {
+    text-align: center;
+}
+.frequently-questions,
+.ask-question {
+    width: 50%;
+    text-align: center;
+}
+form p {
+    margin-bottom: 10px;
+    width: 320px;
+    text-align: left;
+    font-size: 20px;
+}
+.ask-question input,
+.ask-question textarea {
+    border: 1.5px solid black;
+    outline: none;
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+}
+.ask-question textarea {
+    font-size: 20px;
+    resize: none;
+    height: 200px;
+}
+.ask-question-btn {
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    background-color: black;
+    transition: 0.3s;
+}
+.ask-question-btn:hover {
+    cursor: pointer;
+    background-color: rgb(50, 50, 50);
+}
