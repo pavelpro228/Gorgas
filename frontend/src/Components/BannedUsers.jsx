@@ -12,21 +12,30 @@ const BannedUsers = () => {
     }
 
     useEffect(() => {
-        callApiFromBackend()
-        .then(res => setUsers(res));
-    }, []);
+        // callApiFromBackend()
+        // .then(res => setUsers(res));
 
-    // const unBlock = (index) => {
-    //     console.log(users[index].name);
-    // }
+        const fetchData = async () => {
+            const res = await fetch('http://localhost:5000');
+            const data = await res.json();
+            setUsers(data.items);
+            console.log((data));
+        }
+        fetchData()
+    }, []);
 
     return (
         <div className="banned-users">
             BannedUsers
 
-            {users.map((item) => (
+            {/* {users.map((item) => (
                 <BannedUser key={item.id} users={users} email={item.email} isBanned={item.isBanned}/>
+            ))} */}
+
+            {users.map((user) => (
+                <p key={user._id}>{user.name}, {user.password}</p>
             ))}
+            
         </div>
     )
 }
