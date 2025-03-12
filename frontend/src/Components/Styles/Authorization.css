@@ -1,0 +1,60 @@
+.page-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	justufy-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.authorization-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+	position: relative;
+	margin: auto;
+}
+
+h2 {
+	color: #0057b8;
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+button {
+	background-color: #0057b8;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button:hover {
+	background-color: #003e8f;
+}
