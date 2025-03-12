@@ -26,7 +26,7 @@ const Authorization = () => {
                     <p>Пароль</p>
                     <div className="inputes">
                         <input
-                            type="passord"
+                            type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
