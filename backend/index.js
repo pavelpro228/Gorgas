@@ -27,7 +27,7 @@ app.post('/add-user', async (req, res) => {
 
         // Проверка, что все поля заполнены
         if (!name || !surname || !age || !email || !password) {
-            return res.status(400).json({ error: 'Все поля обязательны' });
+            return res.status(400).json({ error: `Всі поля обов'язкові` });
         }
 
         // Создание нового пользователя
@@ -41,10 +41,10 @@ app.post('/add-user', async (req, res) => {
 
         // Сохранение в MongoDB
         const savedUser = await newUser.save();
-        return res.status(201).json({ message: 'Пользователь успешно добавлен', user: savedUser });
+        return res.status(201).json({ message: 'Користувача успішно додано', user: savedUser });
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Ошибка при сохранении пользователя' });
+        return res.status(500).json({ error: 'Помилка при збереженні користувача' });
     }
 });
 

@@ -1,0 +1,48 @@
+.authorization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.authorization-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+	position: relative;
+	margin: auto;
+}
+.authorization-form h2 {
+    color: #0057b8;
+	text-align: center;
+}
+.authorization-form p {
+	font-weight: bold;
+}
+.authorization-form input {
+	width: 90%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.inputes {
+    text-align: center;
+}
+.authorization-form button {
+	background-color: #0057b8;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+.authorization-form button:hover {
+	background-color: #003e8f;
+}
