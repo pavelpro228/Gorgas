@@ -23,10 +23,10 @@ app.get('/', async (req, res) => {
 // Добавление нового пользователя
 app.post('/add-user', async (req, res) => {
     try {
-        const { name, surname, age, email, password } = req.body;
+        const { name, surname, email, password } = req.body;
 
         // Проверка, что все поля заполнены
-        if (!name || !surname || !age || !email || !password) {
+        if (!name || !surname || !email || !password) {
             return res.status(400).json({ error: `Всі поля обов'язкові` });
         }
 
@@ -34,7 +34,6 @@ app.post('/add-user', async (req, res) => {
         const newUser = new usersModel({
             name,
             surname,
-            age,
             email,
             password,
         });
@@ -47,60 +46,6 @@ app.post('/add-user', async (req, res) => {
         return res.status(500).json({ error: 'Помилка при збереженні користувача' });
     }
 });
-
-// var database;
-
-// app.post('/api/AddUsers', multer().none(),(request, response) => {
-//     database.collection("users").count({}, function(error, numOfDocs){
-//         database.collection("users").insertOne({
-//             id:(numOfDocs + 1).toString(),
-//             description: request.body.newUsers
-//         });
-//         response.json("Added Succesfully");
-//     })
-// })
-
-// app.delete('/api/DeleteUsers', (request, response) => {
-//     database.collection("users").deleteOne({
-//         id: request.query.id
-//     });
-//     response.json("Deleted Succesfully")
-// })
-
-// var Express = require('express');
-// var MongoClient = require('mongodb').MongoClient;
-// var cors = require('cors');
-// var multer = require('multer');
-
-// var app = Express();
-// app.use(cors());
-
-// var CONNECTION_STRING = "mongodb+srv://buylin399pavel:qwerty123@cluster.u5hve.mongodb.net/Gorgas?retryWrites=true&w=majority&appName=Cluster";
-// var DATABASE_NAME = "Gorgas";
-// let database;
-// const PORT = process.env.PORT || 5000;
-
-// MongoClient.connect(CONNECTION_STRING)
-// .then(client => {
-//     database = client.db(DATABASE_NAME);
-
-//     app.listen(PORT, () => {
-//         console.log(`Сервер запущений`);
-//     })
-// })
-
-// // app.listen(5000, () => {
-// //     MongoClient.connect(CONNECTION_STRING, (error, client) => {
-// //         database = client.db(DATABASE_NAME);
-// //         console.log(`Сервер запущений`);
-// //     })
-// // })
-
-// app.get('/api/GetUsers', async (req, res) => {
-//     database.collection("users").find({}).toArray((error, result) => {
-//         res.send(result);
-//     })
-// })
 
 app.get('/api/questions', (req, res) => {
     res.json([
