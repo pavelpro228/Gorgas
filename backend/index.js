@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
 // Добавление нового пользователя
 app.post('/add-user', async (req, res) => {
     try {
-        const { name, surname, email, password } = req.body;
+        const { name, surname, email, password, isBanned } = req.body;
 
         // Проверка, что все поля заполнены
         if (!name || !surname || !email || !password) {
@@ -36,6 +36,7 @@ app.post('/add-user', async (req, res) => {
             surname,
             email,
             password,
+            isBanned
         });
 
         // Сохранение в MongoDB

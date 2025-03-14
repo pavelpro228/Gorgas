@@ -10,6 +10,7 @@ const Authorization = () => {
         surname: '',
         email: '',
         password: '',
+        isBanned: false
     });
     const [formDataSignIn, setFormDataSignIn] = useState({
         email: '',
@@ -70,7 +71,9 @@ const Authorization = () => {
     
                 if (!response.ok) throw new Error('Помилка при додаванні користувача');
                 const result = await response.json();
-                alert(result.message || 'Користувач успішно доданий!');
+                alert(result.message || 'Ви успішно зареєструвались!');
+                localStorage.setItem('registered-user', JSON.stringify(result))
+                if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
                 setFormDataRegister({ name: '', surname: '', email: '', password: '' }); // Очистка формы
                 fetchUsers(); // Обновление списка пользователей
             } catch (error) {
@@ -89,6 +92,9 @@ const Authorization = () => {
             if (user.email == formDataSignIn.email && user.password == formDataSignIn.password) {
                 flag = true;
                 alert("Ви успішно авторизувались!");
+                localStorage.setItem('logged-user', JSON.stringify(user))
+                if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
+                setFormDataSignIn({ email: '', password: '' }); // Очистка формы
             } 
         })
         if (flag == false) alert("Неправильний логін або пароль!");

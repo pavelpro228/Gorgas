@@ -4,7 +4,8 @@ const itemSchema = new mongoose.Schema({
     name: String,
     surname: String,
     email: String,  
-    password: String
+    password: String,
+    isBanned: Boolean,
 },{ versionKey: false })
 
 const itemModel = mongoose.model("Users", itemSchema);
