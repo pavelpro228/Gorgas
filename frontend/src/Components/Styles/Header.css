@@ -43,3 +43,24 @@
     font-size: 50px;
     transition: 0.3s;
 }
+.user-btn-settings {
+    position: absolute;
+    top: 100px;
+    padding: 0;
+    border: 1px solid black;
+    background-color: white;
+}
+.user-btn-settings li {
+    list-style: none;
+    padding: 10px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.user-btn-settings a {
+    text-decoration: none;
+    color: black;
+}
+.user-btn-settings li:hover {
+    cursor: pointer;
+    background-color: rgb(189, 189, 189);
+}

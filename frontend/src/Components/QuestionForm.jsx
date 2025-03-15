@@ -32,7 +32,13 @@ const QuestionForm = () => {
                 <textarea className="input-question" type="text" name="question" required/>
             </div>
             <input type="hidden" name="email" value={loggedUser}/>
+            {localStorage.getItem('registered-user') || localStorage.getItem('logged-user') ? 
             <button className="ask-question-btn" onClick={getUser}>Задати питання</button>
+        :
+        <strong style={{fontSize: "20px", color: "red", paddingTop: "30px"}}>
+            Ви не авторизовані! Будь ласка, увійдіть в систему!
+        </strong>
+        }
         </form>
     )
 }

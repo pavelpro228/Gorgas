@@ -14,7 +14,6 @@ body {
 }
 
 .banner {
-  position: relative;
   height: 280px;
   background-size: cover;
   background-position: center;
@@ -38,17 +37,17 @@ body {
   background-color: rgba(255, 255, 255, 0.9); padding: 10px 10px; border-radius: 5px;
 }
 
-button {
+.home button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   padding: 10px 16px;
-  border: none;
   border-radius: 8px;
   margin-top: 10px;
 }
 
 .primary-button {
   background-color: white;
+  border: none;
   color: #0056b3;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
