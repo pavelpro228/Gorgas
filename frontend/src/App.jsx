@@ -7,6 +7,7 @@ import Authorization from './Components/Authorization'
 import Contacts from './Components/Contacts';
 import Question from './Components/Question';
 import About from './Components/About';
+import Users from './Components/Users';
 import BannedUsers from './Components/BannedUsers';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/ask-question' element={<Question/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/banned' element={<BannedUsers/>}/>
+          <Route path='/users' element={<Users/>}/>
         </Routes>
         <Footer />
       </Router>

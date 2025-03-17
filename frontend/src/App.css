@@ -3,7 +3,8 @@
 .question,
 .about,
 .authorization,
-.banned-users {
+.banned-users,
+.users {
     min-height: 629px;
 }
 .app {

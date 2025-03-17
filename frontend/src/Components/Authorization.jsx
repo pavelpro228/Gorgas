@@ -71,9 +71,23 @@ const Authorization = () => {
     
                 if (!response.ok) throw new Error('Помилка при додаванні користувача');
                 const result = await response.json();
-                alert(result.message || 'Ви успішно зареєструвались!');
-                localStorage.setItem('registered-user', JSON.stringify(result))
-                if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
+                window.location.href = '/';
+                alert('Ви успішно зареєструвались!');
+                if (formDataRegister.email === "admingorgasbuylin@gmail.com" ||
+                    formDataRegister.email === "admingorgaspolshin@gmail.com"
+                ) {
+                    localStorage.setItem('registered-user-admin', JSON.stringify(result))
+                    if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
+                    if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
+                }
+                else {
+                    localStorage.setItem('registered-user', JSON.stringify(result))
+                    if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
+                    if (localStorage.getItem('logged-user-admin') != null) localStorage.removeItem('logged-user-admin')
+                    if (localStorage.getItem('registered-user-admin') != null) localStorage.removeItem('registered-user-admin')
+                }
+
+                
                 setFormDataRegister({ name: '', surname: '', email: '', password: '' }); // Очистка формы
                 fetchUsers(); // Обновление списка пользователей
             } catch (error) {
@@ -91,9 +105,20 @@ const Authorization = () => {
         users.find((user) => {
             if (user.email == formDataSignIn.email && user.password == formDataSignIn.password) {
                 flag = true;
+                window.location.href = '/';
                 alert("Ви успішно авторизувались!");
-                localStorage.setItem('logged-user', JSON.stringify(user))
-                if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
+                if (formDataSignIn.email === "admingorgas@gmail.com") {
+                    localStorage.setItem('logged-user-admin', JSON.stringify(user))
+                    if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
+                    if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
+                }
+                else {
+                    localStorage.setItem('logged-user', JSON.stringify(user))
+                    if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
+                    if (localStorage.getItem('registered-user-admin') != null) localStorage.removeItem('registered-user-admin')
+                    if (localStorage.getItem('logged-user-admin') != null) localStorage.removeItem('logged-user-admin')
+                }
+
                 setFormDataSignIn({ email: '', password: '' }); // Очистка формы
             } 
         })

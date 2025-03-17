@@ -21,15 +21,15 @@ const QuestionForm = () => {
             <input type="hidden" name="access_key" value="05326e0d-1a96-497c-afda-7d51d79350bf"></input>
             <div className="name">
                 <div style={{display: "flex", justifyContent: "center"}}><p>Ваше ім'я</p></div>
-                <input className="input-name" type="text" name="name" required/>
+                <input className="input-name" type="text" name="name" id="idName" required/>
             </div>
             <div className="surname">
                 <div style={{display: "flex", justifyContent: "center"}}><p>Ваше прізвище</p></div>
-                <input className="input-surname" type="text" name="surname" required/>
+                <input className="input-surname" type="text" name="surname" id="idSurname" required/>
             </div>
             <div className="enter-question">
                 <div style={{display: "flex", justifyContent: "center"}}><p>Ваше питання</p></div>
-                <textarea className="input-question" type="text" name="question" required/>
+                <textarea className="input-question" type="text" name="question" id="idQuestion" required/>
             </div>
             <input type="hidden" name="email" value={loggedUser}/>
             {localStorage.getItem('registered-user') || localStorage.getItem('logged-user') ? 
