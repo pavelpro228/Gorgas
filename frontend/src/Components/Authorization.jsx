@@ -24,7 +24,7 @@ const Authorization = () => {
 
     const fetchUsers = async () => {
         try {
-        const response = await fetch('http://localhost:5000/');
+        const response = await fetch('http://localhost:5000/users');
         if (!response.ok) throw new Error('Помилка при завантаженні даних');
         const data = await response.json();
         setUsers(data.items);
@@ -107,7 +107,9 @@ const Authorization = () => {
                 flag = true;
                 window.location.href = '/';
                 alert("Ви успішно авторизувались!");
-                if (formDataSignIn.email === "admingorgas@gmail.com") {
+                if (formDataSignIn.email === "admingorgasbuylin@gmail.com" || 
+                    formDataSignIn.email === "admingorgaspolshin@gmail.com"
+                ) {
                     localStorage.setItem('logged-user-admin', JSON.stringify(user))
                     if (localStorage.getItem('registered-user') != null) localStorage.removeItem('registered-user')
                     if (localStorage.getItem('logged-user') != null) localStorage.removeItem('logged-user')
