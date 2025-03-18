@@ -58,7 +58,7 @@ const Users = () => {
 			{localStorage.getItem('registered-user-admin') || 
 			localStorage.getItem('logged-user-admin') ?
 			<>
-				<h1>Користувачі</h1>
+				<h1 style={{margin: "0"}}>Користувачі</h1>
 				<div className="users-list">
 					{users.map((user) => (
 						<div key={user._id} className="user-item">

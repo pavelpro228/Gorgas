@@ -10,6 +10,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.banned-users-list,
+.banned-users-title {
+    margin: 0;
+}
+
 .banned-user-item {
     width: 94%; 
     display: flex;
