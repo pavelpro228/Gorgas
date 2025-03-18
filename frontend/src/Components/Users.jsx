@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import User from "./User";
 import { MdBlock } from "react-icons/md";
+import "./Styles/Users.css";
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -54,31 +55,34 @@ const Users = () => {
 
     return (
         <div className="users">
-            {localStorage.getItem('registered-user-admin') || 
-            localStorage.getItem('logged-user-admin') ?
-            <>
-                <h1 style={{margin: "0"}}>Користувачі</h1>
-                <ul>
-                    {users.map((user) => (
-                        <div key={user._id} style={{display: "flex"}}>
-                            <User 
-                                name={`Ім'я: ${user.name}`} 
-                                surname={`Прізвище: ${user.surname}`} 
-                                email={`Електронна пошта: ${user.email}`}/>
-                            <div className="unblock-icon-container"><MdBlock className="unblock-icon" onClick={() => {
-                                blockUser(user);
-                                deleteFromUserList(user._id);
-                            }}/></div>
-                        </div>
-                    ))}
-                </ul>
-            </>
-            :
-                <strong style={{fontSize: "20px", color: "red", paddingTop: "30px"}}>
-                    Ви не адміністратор!
-                </strong>
-            }
-        </div>
+			{localStorage.getItem('registered-user-admin') || 
+			localStorage.getItem('logged-user-admin') ?
+			<>
+				<h1>Користувачі</h1>
+				<div className="users-list">
+					{users.map((user) => (
+						<div key={user._id} className="user-item">
+							<div className="user-info">
+								<span>Ім'я: {user.name}</span>
+								<span>Прізвище: {user.surname}</span>
+								<span>Електронна пошта: {user.email}</span>
+							</div>
+							<div className="unblock-icon-container">
+								<MdBlock className="unblock-icon" onClick={() => {
+									blockUser(user);
+									deleteFromUserList(user._id);
+								}}/>
+							</div>
+						</div>
+					))}
+				</div>
+			</>
+			:
+			<strong style={{fontSize: "20px", color: "red", paddingTop: "30px"}}>
+				Ви не адміністратор!
+			</strong>
+			}
+		</div>
     )
 }
 

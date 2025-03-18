@@ -1,0 +1,47 @@
+.banned-user-container {
+    width: 94%; 
+    display: flex;
+    flex-direction: column; 
+    gap: 5px;
+	padding-bottom: 20px;
+	background: #eef2f5; 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.banned-user-item {
+    width: 94%; 
+    display: flex;
+    align-items: center; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background: #ffffff;
+    border-left: 5px solid #007bff; 
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+.banned-user-item:hover {
+    background: #f0f8ff; 
+}
+
+.banned-user-email {
+    font-size: 16px;
+	font-weight: 600;
+    color: #333;
+    white-space: nowrap; 
+}
+
+.unblock-icon-container {
+    margin-left: 1px; 
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+	transition: transform 0.2s ease-in-out;
+}
+
+.unblock-icon-container:hover {
+    transform: scale(1.1);
+}
