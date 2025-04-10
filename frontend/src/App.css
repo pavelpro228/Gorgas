@@ -4,7 +4,8 @@
 .about,
 .authorization,
 .banned-users,
-.users {
+.users,
+.cabinet {
     min-height: 629px;
 }
 .app {

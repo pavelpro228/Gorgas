@@ -8,7 +8,9 @@
   font-family: Arial, sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   color: #0d6efd;
 }
@@ -103,22 +105,22 @@ h1, h2, h3 {
 }
 
 .user-info {
-    background-color: #fff;
-    padding: 20px;
-    position: relative;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .personal-photo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }

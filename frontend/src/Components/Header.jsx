@@ -39,6 +39,7 @@ const Header = () => {
                             <Link to="/authorization"><li onClick={openUserSettings}>Авторизація</li></Link>
                         }
                         <Link to="/"><li onClick={openUserSettings}>Головна</li></Link>
+                        <Link to="/cabinet"><li onClick={openUserSettings}>Мій кабінет</li></Link>
                         <Link to="/contacts"><li onClick={openUserSettings}>Контакти</li></Link>
                         <Link to="/ask-question"><li onClick={openUserSettings}>Задати питання</li></Link>
                         <Link to="/about"><li onClick={openUserSettings}>Про нас</li></Link>

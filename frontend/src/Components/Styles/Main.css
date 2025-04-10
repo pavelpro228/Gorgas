@@ -1,5 +1,5 @@
 .main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 body {
@@ -28,13 +28,17 @@ body {
 .banner h1 {
   font-size: 2.6rem;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.9); padding: 10px 10px; border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 10px;
+  border-radius: 5px;
 }
 
 .banner p {
   font-size: 1.2rem;
   margin-top: 10px;
-  background-color: rgba(255, 255, 255, 0.9); padding: 10px 10px; border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 10px;
+  border-radius: 5px;
 }
 
 .home button {

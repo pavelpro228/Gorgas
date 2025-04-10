@@ -9,6 +9,13 @@ const Authorization = () => {
         name: '',
         surname: '',
         email: '',
+        address: '',
+        tariff: {
+            name: 'Базовий',
+            options: 'До 100 куб.м газу на місяць',
+            price: 300,
+            validUntil: '31.12.2025',
+        },
         password: '',
         isBanned: false
     });
@@ -24,10 +31,10 @@ const Authorization = () => {
 
     const fetchUsers = async () => {
         try {
-        const response = await fetch('http://localhost:5000/users');
-        if (!response.ok) throw new Error('Помилка при завантаженні даних');
-        const data = await response.json();
-        setUsers(data.items);
+            const response = await fetch('http://localhost:5000/users');
+            if (!response.ok) throw new Error('Помилка при завантаженні даних');
+            const data = await response.json();
+            setUsers(data.items);
         } catch (error) {
             console.error('Помилка при завантаженні користувачів:', error);
         }
@@ -57,7 +64,7 @@ const Authorization = () => {
             if (user.email == formDataRegister.email) {
                 flag = false;
                 alert("Цей email вже зайнятий!");
-            } 
+            }
         })
         if (flag == true) {
             try {
@@ -88,7 +95,7 @@ const Authorization = () => {
                 }
 
                 
-                setFormDataRegister({ name: '', surname: '', email: '', password: '' }); // Очистка формы
+                setFormDataRegister({ name: '', surname: '', email: '', address: '', password: '' }); // Очистка формы
                 fetchUsers(); // Обновление списка пользователей
             } catch (error) {
                 console.error('Помилка при додаванні користувача:', error);
@@ -168,6 +175,14 @@ const Authorization = () => {
                                 type="email"
                                 name="email"
                                 value={formDataRegister.email}
+                                onChange={handleChangeRegister}
+                                required
+                            />
+                            <p>Адреса проживання</p> 
+                            <input	
+                                type="text"
+                                name="address"
+                                value={formDataRegister.address}
                                 onChange={handleChangeRegister}
                                 required
                             />

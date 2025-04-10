@@ -5,6 +5,13 @@ const itemSchema = new mongoose.Schema({
     surname: String,
     email: String,  
     password: String,
+    address: String,
+    tariff: {
+        name: String,
+        options: String,
+        price: Number,
+        validUntil: String
+    },
     isBanned: Boolean,
 },{ versionKey: false })
 
